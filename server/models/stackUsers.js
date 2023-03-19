@@ -20,6 +20,14 @@ userSchema.methods.generateAuthToken = function () {
   return token;
 };
 
+
+// Generate Password Reset Hash
+
+userSchema.methods.generatePasswordResetHash = function (){
+  const resetHash = crypto
+
+}
+
 // Compile Schema to Model
 
 const stackUser = mongoose.model("stackUser", userSchema);
