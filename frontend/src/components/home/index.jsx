@@ -1,16 +1,14 @@
 import React from 'react'
+import Navbar from './Navbar';
 
-
-const Home = () => {
+function index() {
   return (
-    <div >
-      <nav>
-      <h1> Stack Overflow</h1>
-
-      </nav>
-        
-        </div>
+    <div>
+      
+      <Navbar />
+      
+      </div>
   )
 }
 
-export default Home
+export default index
