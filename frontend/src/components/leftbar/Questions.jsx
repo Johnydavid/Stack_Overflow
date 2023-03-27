@@ -33,8 +33,13 @@ function Questions() {
    
     }
   return (
+    <div>
+    <div className={"nav"}>
+         <Navbar /> 
+         </div>
+   
     <div className = {"questClass"}>
-           {/* <Navbar /> */}
+           
         <div >
             <h4 > All Questions</h4>
             <button type="button" className={"btn btn-primary"} onClick={handleClick}> Ask Question </button>
@@ -42,6 +47,7 @@ function Questions() {
         </div>
 
         
+        </div>
         </div>
   )
 }

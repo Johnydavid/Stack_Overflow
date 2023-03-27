@@ -1,7 +1,9 @@
 .questClass{
     
     display:flex;
-    align-items: center;
+    /* align-items: center; */
+    margin-top:20rem;
+
     
-    margin-left: 10rem;
+    margin-left: 50rem;
 }

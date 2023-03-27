@@ -1,9 +1,17 @@
 .leftBar{
-    height:100vh;
-    width:20vw;
-    margin:15px;
-    padding:5px;  
-    background-color: aqua;
+    width: 20rem;
+    height: 100vh;
+    background-color:black;
+    display: flex;
+  flex-direction: column;
+    align-items: center;
+}
+
+.nav{
+    position:absolute;
+    margin-left: 10rem;
+    display:flex;
+align-items: center;
 }
 
 
