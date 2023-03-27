@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
-        <div class={"container-fluid"}>
+        <div className={"container-fluid"}>
           <div>
             <div class="dropdown">
               <button onclick="myFunction()" class="dropbtn">
