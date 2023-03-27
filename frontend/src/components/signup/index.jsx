@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './signup.module.css';
 import { useState } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX, faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Signup = () => {
   const [input, setInput] = useState({
@@ -38,15 +40,17 @@ const Signup = () => {
     }
   }
 
+
+
   return (
     <>
     <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
         <div class={"container-fluid"}>
           <div>
             <div class="dropdown">
-              <button onclick="myFunction()" class="dropbtn">
-                Dropdown
-              </button>
+            {/* <FontAwesomeIcon className="faX" icon={faX} color="black" /> */}
+            <FontAwesomeIcon icon={faBars}/>
+             
               <div id="myDropdown" class="dropdown-content">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
