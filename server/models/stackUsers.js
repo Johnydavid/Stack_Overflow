@@ -14,19 +14,20 @@ const userSchema = new mongoose.Schema({
 // Token Generation for Schema
 
 userSchema.methods.generateAuthToken = function () {
-  const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
+  const token = jwt.sign({ _id: this._id }, {createdAt: ({
+    type: Date,
+    default: Date.now
+
+  })},
+    
+process.env.JWTPRIVATEKEY, {
     expiresIn: "7d",
   });
   return token;
 };
 
 
-// Generate Password Reset Hash
 
-userSchema.methods.generatePasswordResetHash = function (){
-  const resetHash = crypto
-
-}
 
 // Compile Schema to Model
 
