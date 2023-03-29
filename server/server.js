@@ -5,6 +5,7 @@ const cors = require('cors');
 const connection = require('./db');
 const userRoutes = require("./routes/user");
 const authRoutes = require("./routes/auth");
+const question = require("./routes/question");
 
 
 //  Middleware to create web server
@@ -24,6 +25,11 @@ connection();
 
 app.use('/api/signup', userRoutes);
 app.use('/api/login', authRoutes);
+app.use('api/question', question);
+
+
+
+
 
 
 
