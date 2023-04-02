@@ -4,10 +4,6 @@ const mongoose = require("mongoose");
 module.exports = () => {
   try {
 
- 
-
- 
-
     const uri = process.env.ATLAS_URI;
     mongoose.connect(uri,{});
     console.log("Connected to Database Successfully");

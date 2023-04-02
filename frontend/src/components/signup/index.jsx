@@ -7,8 +7,7 @@ import { faX, faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Signup = () => {
   const [input, setInput] = useState({
-    firstName: "",
-    lastName: "",
+    userName:"",
     email: "",
     password: ""
   })
@@ -129,7 +128,7 @@ const Signup = () => {
     <div className={styles.signup_container}>
       <div className={styles.signup_form_container}>
         <div className={styles.left}>
-          <h1>Welcome GUVI </h1>
+          <h1>Stack Overflow </h1>
           <Link to="/login">
             <button type='button' className={styles.white_btn}>Sign in</button>
           </Link>
@@ -139,23 +138,14 @@ const Signup = () => {
             <h1>Create Account</h1>
             <input
               type="text"
-              placeholder="First Name"
-              name="firstName"
+              placeholder="User Name"
+              name="userName"
               onChange={handleChange}
-              value={input.firstName}
+              value={input.userName}
               required
               className={styles.input}
             ></input>
-            <input
-              type="text"
-              placeholder="Last Name"
-              name="lastName"
-              onChange={handleChange}
-              value={input.lastName}
-              required
-              className={styles.input}
-            ></input>
-            <input
+             <input
               type="email"
               placeholder="Email"
               name="email"

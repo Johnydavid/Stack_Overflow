@@ -1,90 +1,80 @@
 const router = require('express').Router();
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+const {Question} = require('../models/question');
+const {User} = require('../models/user');
 
-let Question = require('../models/question');
+// router.get('/get/all', (req, res) => {
+//     Question.find().sort({_id: -1}).limit(100)
+//     .then(questions => res.json(questions))
+//     .catch(err => res.status(500).json(err))
+// })
 
-// Create Operation
-router.route('/').post((req, res)=>{
-
-    const title = req.body.title;
-  const question = req.body.question;
-//   const tags = req.body.tags;
-//   const created_at = req.body.Date;
-
-    
-    const newQuestion = new Question({
-        title,
-        question
-        // tags,
-        // created_at
-    });
-
-    newQuestion.save()
-    .then( () => {
-     res.json('Question Added');
-          })
-          .catch( (err) => {
-           res.status(400).json('Error: ' + err);
-          });
-
-});
-
-// Read Operation
-    router.route('/viewquestion').get((req, res)=>{
-    Question.find()
-    .then(question =>(res.json(question)))
-    .catch(err=>{
-        res.status(400).json('Error : ' + err)
-    })
-
-});
-
-
-// To select a specific record
-
-
-//  router.route('/:id').get((req, res)=>{
+// router.route('/:id').get((req, res) =>{
 //     Question.findById(req.params.id)
-//     .then(pizza =>(res.json(pizza)))
-//     .catch(err=>{
-//         res.status(400).json('Error : ' + err)
-//     })
+//         .then(question=>(res.json(question)))
+//         .catch(err=>{
+//             res.status(400).json('Error : ' + err)
+//     });
 
 // });
 
 
-// Update  Operation
-router.route('/update/:id').put((req, res)=>{
-    Question.findByIdAndUpdate(req.params.id)
-    .then(p => {
-        p.title = req.body.title,
-        p.question = req.body.question
-        // p.tags = req.body.tags,
-        // p.created_at = req.body.created_at        
-   
+ 
 
+router.post("/",  async (req, res) => {
+    try{
+        // const{error}=validate(req.body);
+        // if(error)
+        // return res.status(400).send({message: error.details[0].message});
+        // const user = await User.findOne({email: req.body.email});
+        // if(!user)
+        // return res.status(401).send({message: "Email not registered"});
 
-    p.save()
-    .then( () => {
-     res.json('Question Updated');
-          })
-          .catch( (err) => {
-           res.status(400).json('Error: ' + err);
-          });
-})
-
+         const {token, title, body} = req.body;
+        // //Validating asker
+        // await User.findOne({email: asker, token}, (err, user) => {
+        // if(err) res.status(500).json("Something went wrong.")
+        // else if(!user) res.status(403).json("Permission denied.")
+        // else{
+            const newQuestion = new Question({title, body})
+            newQuestion.save()
+            .then(() => res.json({"message": "Success", "id": newQuestion._id}))
+          
+        // }
+    // })
+}
+     catch(error){
+        res.status(500).send({message: "Internal Server Error"});
+        console.log(error);
+    }
 });
 
 
-// To Delete a specific record
+
+ 
+    
 
 
- router.route('/:id').delete((req, res)=>{
-    Question.findByIdAndDelete(req.params.id)
-    .then(res.json("Question Deleted"))
-    .catch(err=>{
-        res.status(400).json('Error : ' + err)
-    })
-
-});
+// router.post('/api/answer', jsonParser, (req, res) => {
+//     const {answer, token, answerer, question} = req.body;
+//     //Validating answerer
+//     User.findOne({email: answerer, token}, (err, user) => {
+//         if(err) res.status(500).json("Something went wrong.")
+//         else if(!user) res.status(403).json("Permission denied. ")
+//         else{
+//             Question.findOne({_id: question}, (err, question) => {
+//                 if(err || !question) res.status(500).json("Something went wrong.")
+//                 else{
+//                     question.answers.push({answerer: user, answer})
+//                     question.save()
+//                     .then(() => res.json({message: "Success"}))
+//                 }
+//             })
+//         }
+//     })
+// })
 
 module.exports = router;
+
+

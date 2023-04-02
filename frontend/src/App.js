@@ -9,16 +9,16 @@ import Leftbar from './components/leftbar/Leftbar';
 function App() {
   return (
     <div>
-{/*       
+      
         <Routes>
           <Route path = "/" exact element = {<Home />}></Route>
           <Route path = "/login" exact element = {<Login />}></Route>
           <Route path = "/signup" exact element = {<Signup />}></Route>
           <Route path = "/leftbar" exact element = {<Leftbar />}></Route>
 
-        </Routes> */}
+        </Routes>
        
-       <Leftbar />
+       {/* <Leftbar /> */}
       
    
     </div>
