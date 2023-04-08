@@ -1,4 +1,4 @@
-const { Db } = require("mongoDB");
+const { Db } = require("mongodb");
 const mongoose = require("mongoose");
 
 module.exports = () => {
