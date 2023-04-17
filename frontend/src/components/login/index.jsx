@@ -1,14 +1,18 @@
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import styles from './login.module.css';
 import { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../home/Navbar';
+import Home from '../home/Home';
+import Question from '../questions/question';
 
 const Login = () => {
   const [data, setData] = useState({
     email: "",
     password: ""
   })
+
+  const navigate = useNavigate();
 
   const [err, setErr] = useState("");
 
@@ -21,19 +25,14 @@ const Login = () => {
     console.log("Handle Submit!!!!!");
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/api/auth";
-
-   
+      const url = "http://localhost:8080/api/auth";  
 
       const { data: res } = await axios.post(url, data);
-      console.log(res)
-     
-      localStorage.setItem("token", res.data);
-      // navigate("/");
-      
-
-     
-      window.location = "/";
+      console.log(res)     
+      localStorage.setItem("token", res.data); 
+      localStorage.setItem("name", )
+          // window.location = "/";
+          navigate("/question")
     } catch (error) {
       if (error.response &&
         error.response.status >= 400 &&
@@ -66,6 +65,7 @@ const Login = () => {
               placeholder="Password"
               name="password"
               onChange={handleChange}
+              autoComplete="on"
               value={data.password}
               required
               className={styles.input}
