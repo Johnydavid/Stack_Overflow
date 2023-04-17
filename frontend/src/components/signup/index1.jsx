@@ -43,13 +43,12 @@ const Signup = () => {
   return (
     <>
     <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
-        <div class={"container-fluid"}>
+        <div className={"container-fluid"}>
           <div>
-            <div class="dropdown">
-            {/* <FontAwesomeIcon className="faX" icon={faX} color="black" /> */}
-            <FontAwesomeIcon icon={faBars}/>
+            <div className={"dropdown"}>
+                        <FontAwesomeIcon icon={faBars}/>
              
-              <div id="myDropdown" class="dropdown-content">
+              <div id="myDropdown" className={"dropdown-content"}>
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>

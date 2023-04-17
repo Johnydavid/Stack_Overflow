@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './styles.module.css';
 import { useState } from 'react';
 import axios from 'axios';
+// import Login from '../login/index';
+import Navbar from '../home/Navbar';
 
 const Signup = () => {
   const [input, setInput] = useState({
@@ -23,7 +25,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const url = "http://localhost:8080/api/users";
-    //   const url = "https://jwt-crud-f29g.onrender.com/api/users";
+      // const url = "https://jwt-crud-f29g.onrender.com/api/users";
       const { input: res } = await axios.post(url, input);
       navigate("/login");
       console.log(res.message);
@@ -38,10 +40,15 @@ const Signup = () => {
   }
 
   return (
+    <div>
+      <Navbar />
+      
+   
     <div className={styles.signup_container}>
       <div className={styles.signup_form_container}>
         <div className={styles.left}>
-          <h1>Welcome GUVI </h1>
+          <h2>Welcome to </h2>
+            <h1> Stack Overflow</h1> 
           <Link to="/login">
             <button type='button' className={styles.white_btn}>Sign in</button>
           </Link>
@@ -83,6 +90,7 @@ const Signup = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   )
 }

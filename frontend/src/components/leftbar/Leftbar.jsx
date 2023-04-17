@@ -11,18 +11,18 @@ const Leftbar = () => {
     <div className={"leftBar"}>
 
 <ul className={"nav flex-column m-5"}>
-  <li class="nav-item m-3">
+  <li className={"nav-item m-3"}>
   <Link to="/">Home</Link>
   </li>
   
-    <li class="nav-item m-3">
+    <li className={"nav-item m-3"}>
         
     <Link to="/questions">Questions</Link>
   </li>
-  <li class="nav-item m-3">
+  <li className={"nav-item m-3"}>
     <Link to="/tags">Tags</Link>
   </li>
-  <li class="nav-item m-3">
+  <li className={"nav-item m-3"}>
     <Link to="/users">Users</Link>
   </li>
 

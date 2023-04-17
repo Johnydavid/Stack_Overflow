@@ -13,11 +13,11 @@ const Navbar = () => {
       <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
         <div className={"container-fluid"}>
           <div>
-            <div class="dropdown">
-              <button onclick="myFunction()" class="dropbtn">
+            <div className={"dropdown"}>
+              <button onclick="myFunction()" className={"dropbtn"}>
                 Dropdown
               </button>
-              <div id="myDropdown" class="dropdown-content">
+              <div id="myDropdown" className={"dropdown-content"}>
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
@@ -68,9 +68,9 @@ const Navbar = () => {
               </li>
             </ul>
             <form className={"d-flex  w-50"} role="search">
-              <span>
+              {/* <span>
                 <faMagnifyingGlass />{" "}
-              </span>
+              </span> */}
 
               <input
                 className={"form-control me-5  w-100"}
@@ -81,7 +81,7 @@ const Navbar = () => {
             </form>
             <div>
               <Link to="/login">
-              <button className={"btn btn-light me-3"} > Log In</button>
+              <button className={"btn btn-light me-3"} > Sign In</button>
               </Link>             
            
              
