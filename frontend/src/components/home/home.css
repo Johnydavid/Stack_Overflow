@@ -4,7 +4,6 @@
     background-color: #3bb19b;
     display: flex;
     align-items: center;
-    /* justify-content: start; */
   }
 
   .side_navbar {
@@ -48,4 +47,12 @@
     cursor: pointer;
     margin-right: 20px;
   }
+
+  .homeContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 

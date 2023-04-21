@@ -1,0 +1,10 @@
+body{
+    background-color: bisque;
+    /* position: relative; */
+  
+}
+
+.titleClass{
+    display: flex;
+    justify-content: center;
+}

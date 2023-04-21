@@ -1,0 +1,39 @@
+.question_container{
+    
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.postQuestion{
+    width:25%;
+    display:flex;
+    justify-content: start;
+}
+
+.view_question{
+    display:flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+
+}
+
+.titleClass{
+    /* width:50%; */
+    display:flex;
+    justify-content: center;
+    background-color: lightgreen;
+ 
+    color:blue;
+}
+
+.questionClass{
+    display:flex;
+    justify-content: center;
+    color:black;
+}
+
+

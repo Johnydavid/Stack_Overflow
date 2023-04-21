@@ -1,40 +1,22 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-// import "./home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faBars } from "@fortawesome/free-solid-svg-icons";
-
-
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import Users from "../users";
 
 const Navbar = () => {
-
   return (
     <>
       <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
         <div className={"container-fluid"}>
-          <div>
-            <div className={"dropdown"}>
-              <button onclick="myFunction()" className={"dropbtn"}>
-                Dropdown
-              </button>
-              <div id="myDropdown" className={"dropdown-content"}>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-              </div>
-            </div>
-          </div>
-
-          <Link to="/"  className={"navbar-brand ms-5"}>
-       
-       <img
-         src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg"
-         alt="Stack Overflow"
-         width="150"
-         height="30"
-       ></img>
-     
-     </Link>
+          <Link to="/" className={"navbar-brand ms-5 "}>
+            <img
+              src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg"
+              alt="Stack Overflow"
+              width="150"
+              height="30"
+            ></img>
+          </Link>
           <button
             className={"navbar-toggler"}
             type="button"
@@ -52,19 +34,25 @@ const Navbar = () => {
           >
             <ul className={"navbar-nav me-auto mb-2 mb-lg-0"}>
               <li className={"nav-item"}>
-                <a className={"nav-link active"} aria-current="page" href="#">
+                <Link
+                  to="/about"
+                  className={"nav-link active"}
+                  aria-current="page"
+                >
                   About
-                </a>
+                </Link>
               </li>
               <li className={"nav-item"}>
-                <a className={"nav-link active"} aria-current="page" href="#">
+                 <Link
+                  to="/product" className={"nav-link active"} aria-current="page">
                   Products
-                </a>
+                </Link>
               </li>
               <li className={"nav-item"}>
-                <a className={"nav-link active"} aria-current="page" href="#">
+                <Link
+                  to="/teams" className={"nav-link active"} aria-current="page">
                   For Teams
-                </a>
+                </Link>
               </li>
             </ul>
             <form className={"d-flex  w-50"} role="search">
@@ -81,16 +69,15 @@ const Navbar = () => {
             </form>
             <div>
               <Link to="/login">
-              <button className={"btn btn-light me-3"} > Sign In</button>
-              </Link>             
-           
-             
+                <button className={"btn btn-light me-3"}> Sign In</button>
+              </Link>
             </div>
             <div>
-            <Link to="/signup">
-            <button type='button' className={"btn btn-primary me-5"}>Sign up</button>
-          </Link>
-            
+              <Link to="/signup">
+                <button type="button" className={"btn btn-primary me-5"}>
+                  Sign up
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -99,4 +86,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
+export default Navbar;

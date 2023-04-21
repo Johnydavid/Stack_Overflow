@@ -1,16 +1,14 @@
 import React from "react";
-import "./home.css";
-import Navbar from "./Navbar";
+import "./stackOverflow.css";
+import Logout from "../logout/Logout";
 
-const Home = () => {
+const StackOverflow = () => {
   return (
     <div>
-      <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
-        <Navbar />
-      </nav>
+      <Logout />
 
-      <div className={"homeContainer"}>
-        <h2>Welcome to StackOverflow </h2>
+      <div className={"stackContainer"}>
+           <h2>Welcome to StackOverflow </h2>
       </div>
       <div className={"container mt-5"}>
         <div class="row justify-content-center">
@@ -36,4 +34,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default StackOverflow;

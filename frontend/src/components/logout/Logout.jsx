@@ -1,41 +1,36 @@
-import React from 'react'
-import{Link, useNavigate} from 'react-router-dom';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Logout = () => {
-    const navigate = useNavigate();
-    const handleLogout = () =>{
-      navigate("/login");
-        localStorage.removeItem("token");
-        window.location.reload();     
-       }
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    navigate("/");
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    window.location.reload();
+  };
+  const handleClick = () => {
+    if (localStorage.key) {
+      navigate("/home");
+    } else {
+      navigate("/");
+    }
+  };
+  const value = window.localStorage.getItem("name");
   return (
     <div>
-
-<nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
+      <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
         <div className={"container-fluid"}>
-          <div>
-            <div clasName={"dropdown"}>
-              <button onClick="myFunction()" className={"dropbtn"}>
-                Dropdown
-              </button>
-              <div id="myDropdown" className={"dropdown-content"}>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-              </div>
-            </div>
+          <div className={"navbar-brand ms-5"}>
+            <img
+              src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg"
+              alt="Stack Overflow"
+              width="150"
+              height="30"
+              onClick={() => handleClick()}
+            ></img>
           </div>
 
-          <Link to="/"  className={"navbar-brand ms-5"}>
-       
-       <img
-         src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg"
-         alt="Stack Overflow"
-         width="150"
-         height="30"
-       ></img>
-     
-     </Link>
           <button
             className={"navbar-toggler"}
             type="button"
@@ -53,19 +48,32 @@ const Logout = () => {
           >
             <ul className={"navbar-nav me-auto mb-2 mb-lg-0"}>
               <li className={"nav-item"}>
-                <a className={"nav-link active"} aria-current="page" href="#">
-                  About
-                </a>
+                <Link
+                  to="/home"
+                  className={"nav-link active"}
+                  aria-current="page"
+                >
+                  Home
+                </Link>
+              </li>
+
+              <li className={"nav-item"}>
+                <Link
+                  to="/question"
+                  className={"nav-link active"}
+                  aria-current="page"
+                >
+                  Questions
+                </Link>
               </li>
               <li className={"nav-item"}>
-                <a className={"nav-link active"} aria-current="page" href="#">
-                  Products
-                </a>
-              </li>
-              <li className={"nav-item"}>
-                <a className={"nav-link active"} aria-current="page" href="#">
-                  For Teams
-                </a>
+                <Link
+                  to="/users"
+                  className={"nav-link active"}
+                  aria-current="page"
+                >
+                  Users
+                </Link>
               </li>
             </ul>
             <form className={"d-flex  w-50"} role="search">
@@ -80,20 +88,34 @@ const Logout = () => {
                 aria-label="Search"
               />
             </form>
-            <div>
-              
-              <Link to="/logout">
-              <button className={"btn btn-danger me-3"} onClick = {handleLogout}>Log Out</button>
-              </Link>          
-                      
+
+            <div
+              style={{
+                color: "yellow",
+                backgroundColor: "brown",
+                borderRadius: "10%",
+                width: "10%",
+                textAlign: "center",
+              }}
+            >
+              <h4>{value}</h4>
             </div>
-           
+
+            <div>
+              <Link to="/logout">
+                <button
+                  className={"btn btn-danger ms-4 me-3"}
+                  onClick={handleLogout}
+                >
+                  Log Out
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
-
     </div>
-  )
-}
+  );
+};
 
-export default Logout
+export default Logout;
