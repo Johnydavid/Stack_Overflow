@@ -38,16 +38,29 @@ router.route("/read").get((req, res) => {
 
 router.route("/:id").get((req, res) => {
   QuestionStore.findById(req.params.id)
-    .then((question) => res.json(question))
+      .then((question) => res.json(question))
     .catch((err) => {
       res.status(400).json("Error : " + err);
     });
 });
 
+router.route("/search").post((req, res) => {
+  QuestionStore.find({title: req.body.title}, (err, QuestionStore) => {   
+    if(err) return res.status(500).send(err)
+    return res.status(200).send(QuestionStore)
+  });
+});
+
+   
+
+
+
+
 // // Update  Operation
 router.route("/update/:id").put((req, res) => {
   QuestionStore.findByIdAndUpdate(req.params.id).then((quest) => {
-    (quest.title = req.body.title), (quest.question = req.body.question);
+    quest.title = req.body.title
+    quest.question = req.body.question
 
     quest
       .save()

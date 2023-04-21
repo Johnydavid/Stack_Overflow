@@ -41,7 +41,7 @@ const Question = () => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setData(res.data);
       })
       .catch((err) => {
