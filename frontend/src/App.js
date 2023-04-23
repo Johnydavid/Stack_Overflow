@@ -9,12 +9,9 @@ import Question from "./components/questions/question";
 import Logout from "./components/logout/Logout";
 import Users from "./components/users";
 import StackOverflow from "./components/stackOverflow/StackOverflow";
-import { useNavigate } from "react-router-dom";
 
 function App() {
-  const user = localStorage.getItem("token");
-  const Navigate = useNavigate();
-  return (
+      return (
     <div>
       <Routes>
         <Route path="/" exact element={<Home />}></Route>

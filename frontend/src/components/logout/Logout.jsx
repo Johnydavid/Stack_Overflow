@@ -29,7 +29,7 @@ const Logout = () => {
               width="150"
               height="30"
               onClick={() => handleClick()}
-            ></img>
+              ></img>
           </div>
 
           <button
@@ -54,7 +54,7 @@ const Logout = () => {
                   className={"nav-link active"}
                   aria-current="page"
                 >
-                  Home
+               <button className={"btn btn-light me-2"}> Home</button>
                 </Link>
               </li>
 
@@ -64,7 +64,7 @@ const Logout = () => {
                   className={"nav-link active"}
                   aria-current="page"
                 >
-                  Questions
+                <button className={"btn btn-light me-2"}> Questions</button>
                 </Link>
               </li>
               <li className={"nav-item"}>
@@ -73,7 +73,7 @@ const Logout = () => {
                   className={"nav-link active"}
                   aria-current="page"
                 >
-                  Users
+             <button className={"btn btn-light me-2"}> Users</button>
                 </Link>
               </li>
             </ul>

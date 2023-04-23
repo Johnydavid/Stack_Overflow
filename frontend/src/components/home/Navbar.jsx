@@ -38,7 +38,8 @@ const Navbar = () => {
                   className={"nav-link active"}
                   aria-current="page"
                 >
-                  About
+                   <button className={"btn btn-light me-3"}> About</button>
+              
                 </Link>
               </li>
               <li className={"nav-item"}>
@@ -47,7 +48,8 @@ const Navbar = () => {
                   className={"nav-link active "}
                   aria-current="page"
                 >
-                  Products
+              
+                   <button className={"btn btn-light me-2"}> Products</button>
                 </Link>
               </li>
               <li className={"nav-item"}>
@@ -56,7 +58,7 @@ const Navbar = () => {
                   className={"nav-link active"}
                   aria-current="page"
                 >
-                  For Teams
+            <button className={"btn btn-light me-3"}> For Teams </button>
                 </Link>
               </li>
             </ul>
