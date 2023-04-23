@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -80,23 +80,17 @@ const Logout = () => {
               </li>
             </ul>
             <form className={"d-flex  w-50"} role="search" >
-              {/* <span>
+               <span>
                 <faMagnifyingGlass />{" "}
-              </span> */}
+              </span> 
               <input
                 className={"form-control me-5  w-100"}
                 type="search"
                 placeholder="Search"
-                aria-label="Search"
-                                              
+                aria-label="Search"                                              
                 required>
-
-                </input>
-              
-              
-            </form>
-          
-
+                </input>             
+              </form>         
             <div
               style={{
                 color: "yellow",
