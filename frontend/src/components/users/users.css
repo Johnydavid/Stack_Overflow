@@ -8,3 +8,17 @@ body{
     display: flex;
     justify-content: center;
 }
+
+.userDashboard{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    flex-direction: row;
+    height: 100px;
+    width:300px;
+    border-radius: 10px;
+    background-color: brown;
+    color:yellow
+}
+
