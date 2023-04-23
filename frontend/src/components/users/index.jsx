@@ -8,7 +8,9 @@ const Users = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:8080/api/users/read";
+    // const url = "http://localhost:8080/api/users/read";
+    const url ="https://stack-overflow-61cl.onrender.com/api/users/read";
+
     axios
       .get(url)
       .then((res) => {
@@ -43,6 +45,7 @@ const Users = () => {
                 </tbody>       
               </table>
             ))}
+           
           </div>
         </div>
       </div>

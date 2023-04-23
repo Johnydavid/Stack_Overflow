@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -19,32 +19,7 @@ const Logout = () => {
     }
   };
   const value = window.localStorage.getItem("name");
-  const [input, setInput] = useState({
-    title: ""
-   
-  });
-  const [err, setErr] = useState("");
-
-  const handleChange = ({ target: ip }) => {
-    setInput({ ...input, [ip.name]: ip.value });
-  };
-
-  const handleSubmit = async (e) => {
-    try {
-      const url = "http://localhost:8080/api/question/search";
-      // const url = "https://jwt-crud-f29g.onrender.com/api/users";
-      const { input: res } = await axios.post(url, input);
-      console.log(res.message);
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-        setErr(error.response.data.message);
-      }
-    }
-  };
+  
   return (
     <div>
       <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
@@ -104,27 +79,23 @@ const Logout = () => {
                 </Link>
               </li>
             </ul>
-            <form className={"d-flex  w-50"} role="search" onSubmit={handleSubmit}>
+            <form className={"d-flex  w-50"} role="search" >
               {/* <span>
                 <faMagnifyingGlass />{" "}
               </span> */}
               <input
                 className={"form-control me-5  w-100"}
-                type="text"
+                type="search"
                 placeholder="Search"
                 aria-label="Search"
-                name="title"
-                onChange={handleChange}
-                value={input.title}
-                required></input>
+                                              
+                required>
+
+                </input>
+              
               
             </form>
-            {err && <div>{err}</div>}
-              <div>
-                <button type="submit" className={"btn btn-primary mt-3 me-5"}>
-                  Search
-                </button>
-              </div>
+          
 
             <div
               style={{

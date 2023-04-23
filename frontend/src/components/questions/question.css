@@ -11,7 +11,7 @@
 .postQuestion{
     width:25%;
     display:flex;
-    justify-content: start;
+    /* justify-content: start; */
 }
 
 .view_question{

@@ -37,7 +37,8 @@ const Question = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:8080/api/question/read";
+    // const url = "http://localhost:8080/api/question/read";
+    const url ="https://stack-overflow-61cl.onrender.com/api/question/read";
     axios
       .get(url)
       .then((res) => {

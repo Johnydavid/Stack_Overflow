@@ -1,10 +1,13 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import Users from "../users";
+
+import "./home.css";
 
 const Navbar = () => {
+  
+  
   return (
     <>
       <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
@@ -37,28 +40,30 @@ const Navbar = () => {
                 <Link
                   to="/about"
                   className={"nav-link active"}
-                  aria-current="page"
+                  aria-current="page"              
                 >
                   About
                 </Link>
               </li>
               <li className={"nav-item"}>
                  <Link
-                  to="/product" className={"nav-link active"} aria-current="page">
+                  to="/product" className={"nav-link active "} aria-current="page">                  
                   Products
+              
                 </Link>
               </li>
               <li className={"nav-item"}>
                 <Link
                   to="/teams" className={"nav-link active"} aria-current="page">
                   For Teams
+                  
                 </Link>
               </li>
             </ul>
             <form className={"d-flex  w-50"} role="search">
-              {/* <span>
+              <span>
                 <faMagnifyingGlass />{" "}
-              </span> */}
+              </span>
 
               <input
                 className={"form-control me-5  w-100"}

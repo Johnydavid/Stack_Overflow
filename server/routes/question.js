@@ -45,7 +45,7 @@ router.route("/:id").get((req, res) => {
 });
 
 router.route("/search").post((req, res) => {
-  QuestionStore.find({title: req.body.title}, (err, QuestionStore) => {   
+  QuestionStore.findOne({title: req.body.title}, (err, QuestionStore) => {   
     if(err) return res.status(500).send(err)
     return res.status(200).send(QuestionStore)
   });

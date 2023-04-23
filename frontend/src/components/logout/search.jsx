@@ -17,14 +17,15 @@ const search = () => {
                 onChange={handleChange}
                 value={input.title}
                 required></input>
-              
-            </form>
-            {err && <div>{err}</div>}
+                {err && <div>{err}</div>}
               <div>
                 <button type="submit" className={"btn btn-primary mt-3 me-5"}>
                   Search
                 </button>
               </div>
+              
+            </form>
+            
     </div>
   )
 }

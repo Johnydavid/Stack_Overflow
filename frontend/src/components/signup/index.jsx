@@ -22,8 +22,8 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/api/users";
-      // const url = "https://jwt-crud-f29g.onrender.com/api/users";
+      // const url = "http://localhost:8080/api/users";
+      const url ="https://stack-overflow-61cl.onrender.com/api/users";
       const { input: res } = await axios.post(url, input);
       navigate("/login");
       console.log(res.message);
