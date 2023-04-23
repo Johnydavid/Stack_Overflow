@@ -1,13 +1,9 @@
 import React from "react";
-import {  Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 import "./home.css";
 
 const Navbar = () => {
-  
-  
   return (
     <>
       <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
@@ -40,31 +36,31 @@ const Navbar = () => {
                 <Link
                   to="/about"
                   className={"nav-link active"}
-                  aria-current="page"              
+                  aria-current="page"
                 >
                   About
                 </Link>
               </li>
               <li className={"nav-item"}>
-                 <Link
-                  to="/product" className={"nav-link active "} aria-current="page">                  
+                <Link
+                  to="/product"
+                  className={"nav-link active "}
+                  aria-current="page"
+                >
                   Products
-              
                 </Link>
               </li>
               <li className={"nav-item"}>
                 <Link
-                  to="/teams" className={"nav-link active"} aria-current="page">
+                  to="/teams"
+                  className={"nav-link active"}
+                  aria-current="page"
+                >
                   For Teams
-                  
                 </Link>
               </li>
             </ul>
             <form className={"d-flex  w-50"} role="search">
-              <span>
-                <faMagnifyingGlass />{" "}
-              </span>
-
               <input
                 className={"form-control me-5  w-100"}
                 type="search"
@@ -72,6 +68,7 @@ const Navbar = () => {
                 aria-label="Search"
               />
             </form>
+
             <div>
               <Link to="/login">
                 <button className={"btn btn-light me-3"}> Sign In</button>
